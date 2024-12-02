@@ -1,0 +1,1165 @@
+---
+title: "226305 Forschungsbericht"
+subtitle: "Netzwerkanalyse der East India Company"
+date: "Sommersemester 2020"
+author: "Luca Müller, Benian "
+output: html_notebook
+editor_options: 
+  markdown: 
+    wrap: 72
+  html_document:
+    toc: true      
+    toc_depth: 2   
+    toc_float: true 
+---
+
+
+
+#################################################### 
+### Abstract
+
+Die vorliegende Netzwerkanalyse untersucht die Handelsnetzwerke der East India Company (EIC) im Zeitraum von 1795 bis 1805, um zentrale Akteure und Knotenpunkte sowie die Auswirkungen von Konflikten auf diese Strukturen zu analysieren. Durch die Anwendung von Methoden der Netzwerkanalyse wurden Daten aus historischen Quellen wie Schiffsregistern und Logbüchern erhoben, bereinigt und visualisiert. Die Analyse ergab, dass bestimmte Häfen wie St. Helena, Madras und Calcutta entscheidende Rollen im Netzwerk einnahmen, sowohl in Friedens- als auch in Kriegszeiten. Insbesondere der vierte Mysore-Krieg (1798–1799) und der zweite Marathenkrieg (1803–1805) beeinflussten die Handelsaktivitäten und strategischen Prioritäten der EIC maßgeblich.
+
+Die Ergebnisse zeigen, dass die EIC ein hochgradig vernetztes und zentralisiertes Handelsnetzwerk betrieb, das durch effiziente Kommunikationswege und logistische Strukturen geprägt war. Die Analyse der Netzwerkstruktur und -dynamik ermöglicht es, die Bedeutung der EIC als globale Handelsmacht besser zu verstehen und ihre Rolle in der Geschichte des Kolonialismus zu beleuchten. Die Verknüpfung von historischer Forschung und Netzwerkanalyse eröffnet neue Perspektiven auf die Geschichte der EIC und zeigt, wie moderne Methoden dazu beitragen können, historische Phänomene zu erforschen und zu interpretieren.
+
+# Keywords
+
+East India Company, Netzwerkanalyse, Kolonialismus, Globalisierung, Handel, Kriege
+
+### 1. Einleitung
+
+## 1.1 East India Company: Handelsimperium und Wegbereiter der Globalisierung
+
+Die East India Company war eine der einflussreichsten
+Handelsgesellschaften der Geschichte, deren Aktivitäten während des 17.
+bis zum 19. Jahrhundert weitreichende wirtschaftliche und geopolitische
+Auswirkungen hatten. Unser Ziel ist es, die zentralen Akteure und
+Knotenpunkte innerhalb dieses Handelsnetzwerks zu identifizieren, um ein
+besseres Verständnis für die Strukturen und Dynamiken zu erlangen, die
+den Erfolg dieser Organisation ermöglichten. Auch heutige internationale Unternehmen, wurden von der East India Company geprägt (Markley 2015, S.1). Ein Vergleich mit modernen
+Unternehmen wie Amazon verdeutlicht die Aktualität des Themas. Wie die
+East India Company in ihrer Zeit ist Amazon heute ein global agierender
+Player, der durch effiziente Netzwerke und innovative Strategien Märkte
+dominiert. Dieser historische Rückblick bietet somit wertvolle Einblicke
+in die Parallelen zwischen den Handelsimperien von gestern und heute.
+
+Im Rahmen unserer Netzwerkanalyse beschäftigen wir uns mit der East
+India Company im Zeitraum von 1795 bis 1805. Wir haben uns aus mehreren
+Gründen für diesen Zeitrahmen entscheiden. Auf der einen Seite
+beschränken wir uns auf eine Dekade der EIC, da die Netzwerkanalyse
+aufgrund der Anzahl der Knoten und Kanten und der damit zu
+analysierenden Erkenntnisse sonst nicht zu stemmen wären für ein
+fünf-köpfiges Team. Auf der anderen Seite mussten wir uns auch an den
+uns zur Verfügung stehenden Daten orientieren, da viele Logbücher und
+Einträge über die East India Company nicht digitalisiert sind.
+Allerdings ist der ausgewählte Zeitrahmen auch historisch und politisch
+interessant.
+
+In diesem Jahrzehnt fanden zwei bedeutende Kriege statt, die
+entscheidend zur Festigung der britischen Dominanz in Indien beitrugen.
+Der vierte Mysore-Krieg (1798-1799) führte zur Niederlage von Tipu
+Sultan, dem Herrscher von Mysore, und brachte Südindien weitgehend unter
+die Kontrolle der East India Company (Christof-Füchsle 2018, S.1-12). Kurz darauf, während des Zweiten
+Marathenkriegs (1803--1805), konnte die EIC ihre Macht weiter ausbauen,
+indem sie bedeutende Gebiete des Marathenreichs unterwarf. Beide
+Konflikte hatten erhebliche Auswirkungen auf die Handelsrouten und die
+wirtschaftliche Macht der Company, da sie ihre Position als zentraler
+Akteur in Indien weiter festigten und ihr Handelsnetzwerk erweiterten.
+
+## 1.2 Zentrale Forschungsfrage
+
+Welche Akteure und Knotenpunkte bildeten die zentralen Elemente des Handelsnetzwerks der East India Company zwischen 1795 und 1805 und wie veränderten die Kriege dieser Zeit ihre Bedeutung und ihre Verbindungen innerhalb des Netzwerks?
+
+## 1.3 Motivation
+
+Wir haben uns für das Thema der East India Company entschieden, weil dieser Name bei vielen Menschen unserer Generation, die mit der Kolonialgeschichte weniger vertraut sind, kaum Bekanntheit genießt. Dabei handelt es sich um eine der mächtigsten Organisationen der Weltgeschichte, die die Welt nachhaltig beeinflusst hat. Mit unserer Arbeit möchten wir dazu beitragen, dieses spannende historische Thema bekannter zu machen und zu zeigen, wie relevant es auch heute noch ist.
+Die East India Company war mehr als nur ein Handelsunternehmen. Sie war ein Wegbereiter der Globalisierung, ein Machtinstrument des britischen Kolonialismus und ein Beispiel für Innovation und Wandel.Sie hatte eine eigene Armee mit 200.000 Soldaten und regierte bis 1800 über 90 Millionen Menschen in Indien (Clegg 2017, S.52). Durch die Analyse ihres Netzwerks können wir die komplexen Verflechtungen von Handel, Politik und Kultur in einem globalen Maßstab besser verstehen.
+Ein weiterer Grund für unsere Themenwahl ist die Möglichkeit, Geschichte durch Visualisierungen lebendig werden zu lassen. Die Netzwerkanalyse hilft uns dabei, die komplexen Beziehungen und Strukturen der East India Company anschaulich darzustellen. So wird Geschichte nicht nur verständlicher, sondern auch greifbarer. Wir wollen zeigen, dass Geschichte nicht trocken sein muss, sondern mit den richtigen Methoden spannend und modern vermittelt werden kann.
+Unsere Netzwerkanalyse ermöglicht es uns neue Erkenntnisse über die East India Company zu gewinnen. Wir können die wichtigsten Akteure und Knotenpunkte im Netzwerk identifizieren, die Struktur des Netzwerks analysieren und ihre Entwicklung im Laufe der Zeit und während der britischen Expansion durch Kriege verfolgen.
+Darüber hinaus wollen wir mit unserer Arbeit zeigen, dass die Geschichte der East India Company auch heute noch relevant ist. Die Company war ein Vorläufer der modernen globalen Unternehmen wie Amazon und ihre Geschichte verdeutlicht die Chancen und Risiken der Globalisierung. 
+Indem wir historische Forschung mit Methoden der Netzwerkanalyse verbinden, wählen wir einen interdisziplinären Ansatz, der neue Perspektiven auf die Geschichte der East India Company ermöglicht. Wir sind überzeugt, dass diese Kombination von Methoden zu einem tieferen Verständnis dieses wichtigen historischen Themas führen kann.
+Mit unserer Arbeit möchten wir einen Beitrag zur Erforschung der East India Company leisten und gleichzeitig zeigen, wie spannend und relevant Geschichte sein kann. Wir hoffen, dass unsere Analyse dazu beiträgt, das Interesse an diesem wichtigen Kapitel der Weltgeschichte zu wecken.
+
+### 2. Forschungsstand und Arbeitshypothesen
+
+## 2.1 Forschungsstand
+
+Bei der Recherche nach dem bisherigen Forschungsstand wird schnell klar,
+dass eine Netzwerkanalyse von Schiffen der East India Trading Company
+nicht zu finden ist. Die bisherige Forschung beschreibt viel mehr die
+ökonomischen und politischen Bedingungen der Zeit und bringt diese in
+Verbindung. Ein Beispiel dafür ist die Studie "The East India Company: A
+History" von Philip Lawson. Es existieren auch Arbeiten, welche die
+damalige Zeit mit der Gegenwart verknüpfen, aber eine Analyse der
+Handelsrouten ist nicht zu finden. Allgemein ist es schwer Quellen oder
+Untersuchungen aller Art über diese Thematik zu sammeln, was diese
+Netzwerkanalyse noch interessanter gestaltet.
+
+## 2.2 Arbeitshypothesen
+
+In der vorliegenden Analyse sollen verschiedene Hypothesen zur Schiffahrt und zum Handel der East India Company untersucht werden. Die Arbeitshypothesen dienen in diesem Zusammenhang als Leitfaden für die Analyse und Interpretation der Daten. Ziel ist es ein besseres Verständnis für die strategische Nutzung der Schiffe und Standorte zu bekommen. Die Hypothesen lauten wie folgt:
+
+a) Ratsuche und Knoten mit höchstem Degree-Wert: Wir gehen davon aus, dass der Knoten mit dem höchsten Degree-Wert im Netzwerkmodell gleichzeitig der Hafen ist mit dem höchsten Import- und Exportvolumen. Konkret wird vermutet, dass dieser Hafen wegen seiner hohen Relevanz die meisten Handelsbeziehungen unterhält und damit als wichtigstes logistisches und wirtschaftliches Drehkreuz fungiert.
+
+b) Zusammenarbeit: Es wird angenommen, dass während eines Krieges auf indischen Boden, mehr Schiffe der East India Company in Indien anlegen, um die Handels- und Machtposition in der Region auszubauen und zu festigen. Die Hypothese basiert auf der Annahme, dass die East India Company in Kriegszeiten verstärkt auf die Zusammenarbeit mit indischen Häfen angewiesen war, um ihre Präsenz und Macht in der Region zu stärken.
+
+Neben den Arbeitshypothesen verfolgt die Analyse einen explorativen Ansatz, um weitere Erkenntnisse über die Handelsbeziehungen und -routen der East India Company zu gewinnen. Die Netzwerkanalyse soll dabei helfen, die Strukturen und Dynamiken des Handelsnetzwerks besser zu verstehen und die zentralen Akteure und Knotenpunkte zu identifizieren. Auch zeitliche Entwicklungen innerhalb des kurzen Jahrzehnts können mithilfe der vorliegenden Daten untersucht werden.
+
+### 3. Datenerhebung: Zugang, Bereinigung und Codebuch
+
+## 3.1 Zugang
+
+Die Quellen für eine Datenerhebung, die man im Bereich Seefahrten der East India Company findet, bestehen aus oder basieren auf Logbüchern, Schiffsregistern, Journalen und Zeitzeugenberichten. Sowohl diese Schriftstücke als auch die teils daraus entstandenen Fachbücher sind zu großen Teilen nicht kostenlos zugänglich und in einigen Fällen ausschließlich in Bibliotheken von Großstädten wie London, Berlin oder Zürich einsehbar.
+Auf diesem Wege wäre es uns also nicht möglich gewesen, einen gesamtheitlichen, auf verschiedenen Quellen beruhenden Blick auf das Thema zu bekommen. Da es somit aus zeitlichen und finanziellen Gründen nicht zu verantworten war, unseren Datensatz beispielweise aus einzelnen Logbüchern zusammenzusetzen, haben wir auf eine eigene Erhebung aus schriftlichen Originalquellen verzichtet und uns dafür entschieden, eine der wenigen online abrufbaren Sammlungen von East India Company Schiffsdaten zu verwenden, die uns zur Verfügung stand. Auf der Website „threedecks.org“, einem privat geführten Passionsprojekt verschiedener Historiker und anderer geschichtsbegeisterter Menschen, sind schiffsbezogene Daten der Zeit aus den oben erwähnten Originalquellen zusammengetragen. Unter anderem bietet die Webseite die mit Abstand umfangreichste Auflistung von Schiffen, welche mit der East India Company in Beziehung standen, die wir in unseren Recherchen entdeckt haben. 
+Die zahlreichen von der Webseite verwendeten Quellen sind hier offengelegt: https://threedecks.org/index.php?display_type=source_search
+Durch die Verwendung von threedecks.org ist also sichergestellt, dass wir eine möglichst breite Auswahl historischer Schiffe basierend auf einer möglichst breiten Quellenlage in unserem Datensatz berücksichtigen. Durch die im Datensatz integrierten Filterfunktionen ist es zudem möglich, den betrachteten Zeitraum präzise auszuwählen.
+Eine klare Limitation der Webseite im Bezug auf unser Forschungsprojekt ist allerdings das Fehlen genauerer Informationen zu den einzelnen Schiffen. Als Gerüst für unseren Datensatz eignet diese sich trotzdem, doch ist die Nutzung weiterer Quellen notwendig, um die Hintergründe der Schiffe ebenfalls in den Datensatz aufnehmen zu können. Hierfür verwenden wir hauptsächlich die zahlreichen Wikipedia-Einträge, die es zu Schiffen der East India Company gibt. 
+https://en.wikipedia.org/wiki/Category:Ships_of_the_British_East_India_Company
+Diese stellen einen weiteren umfangreichen themenbezogenen Datensatz dar, der sich aufgrund fehlender Übersichtlichkeit weniger als Datengerüst eignet, allerdings zu den erfassten Schiffen wichtige Zusatzinformationen bietet. Unter anderem werden Werften, Besitzer, Kapitäne, geschlagene Schlachten und Seefahrten der Schiffe aufgeführt. Nur so war es uns schlussendlich möglich, über 150 Schiffe mitsamt ihren historischen Umständen kategorisiert in unserem Datensatz festzuhalten.
+
+## 3.2 Bereinigung des Datensatzes
+
+Die Bereinigung des Datensatzes hat in unserem Fall einige Zeit in Anspruch genommen. Im Folgenden wird aufgezeigt, auf welche Probleme wir hierbei gestoßen sind und wie wir diese gelöst haben. 
+Erstens war es wichtig, Isolates aus unserer Nodelist zu löschen. Hierbei hat es sich hauptsächlich um Schiffe gehandelt, die keine Reise in unserem Bezugszeitraum unternommen haben und fälschlich erfasst wurden. 
+Des Weiteren galt es, Dopplungen in der Nodelist ausfindig zu machen. Dopplungen traten zum einen dergestalt auf, dass beispielsweise derselbe Hafen zweifach mit unterschiedlichen IDs in der Nodelist angelegt war. In diesem Fall genügte es, den weniger befahrenen Hafen aus der Nodelist zu entfernen und die zugehörigen Fahrten in der Edgelist auf die ID des übrigen Hafens umzustellen.
+Zum Anderen war während der Erhebung eine beträchtliche Zahl an Dopplungen durch die Historizität des Themas entstanden. So gab es aufgrund des Alters und der Vielfalt der Quellen für einen Besitzer oder Hafen verschiedene Schreibweisen, oder teils verschiedene Namen. Ein noch recht offensichtliches Beispiel dafür sind „Port Jackson“ und „Sydney Harbour“, doch an weniger bekannten Orten erforderte die Überprüfung der Namen einige Recherche. Auch sind die Namen der Häfen oftmals nicht mehr dieselben wie heutzutage. Besonders bei asiatischen Städten hatten wir mit dieser Fehlerquelle zu kämpfen. Die Lösung bestand hierbei schlichtweg in einer gründlichen Prüfung jedes einzelnen Knotens. Die Häfen haben wir in einer gesonderten Tabelle gruppiert und systematisch auf solche versteckten Dopplungen untersucht.
+Schließlich haben wir abgeglichen, ob jede ID in der Edgelist mit einer ID in der Nodelist korrespondiert. Nachdem hier letzte Flüchtigkeitsfehler ausgebessert waren, war der Datensatz aufbereitet. Diese gründliche Korrektur hat sich während der Visualisierung bezahlt gemacht, da Fehler in der Edge- und Nodelist während dieser Phase zu Verzögerungen führen und umständlicher zu beheben sind.
+
+
+## 3.3 Codebuch
+
+Ganz allgemein gesprochen ist es in einem Netzwerk der Zweck eines einheitlichen Codebuchs, eben diese Kategorisierung von Informationen sicherzustellen. Beispielsweise soll jedes erfasste Objekt, also jeder Knoten, Zusatzinformationen zu denselben Bereichen erhalten, kodiert in den Knotenattributen. Bei der Erstellung eines Netzwerks bedarf es demnach eines Überblicks über die verfügbaren Daten, um präzise zu entscheiden, welche Kategorien thematisch sinnvoll und auch in der breiten Masse praktisch umsetzbar sind. Hierfür werden Muster im Datensatz ausfindig gemacht – Gemeinsamkeiten in der Datengrundlage möglichst vieler Knoten, die man anschließend übersichtlich als Attribute festhalten kann.
+In unserem Fall war schnell klar, dass sich gewisse Aspekte der von uns verwendeten Einträge hierfür besonders eignen würden. Untersucht man historische Schiffe im Hinblick auf deren Handelsrouten, so ist es zum Beispiel naheliegend, den Besitzer des Schiffes (und damit den größten Profiteur der Seefahrten), den Heimathafen und das Schicksal des Schiffes als Knotenattribute aufzunehmen. Ursprünglich stellten Besitzer einen eigenen Knoten unseres Netzwerks dar, im Laufe unserer Arbeit zeigte sich allerdings, dass hier eine Attribuierung genügen und für größere Übersichtlichkeit sorgen würde.
+Stattdessen entschieden wir uns dafür, aus den während der Recherche auftauchenden, von der East India Company befahrenen Häfen eine Liste zu erstellen und die Häfen zu einem zweiten Knoten zu machen. Auf das Berücksichtigen der britischen Heimathäfen haben wir hierbei verzichtet und stattdessen ausschließlich die Häfen auf den weltweiten Handelsrouten der Kompanie untersucht. 
+Der Verwendungszweck unserer Edgelist besteht diesem inhaltlichen Fokus entsprechend in der Erfassung der einzelnen Seefahrten der untersuchten Schiffe, also aus gerichteten Kanten von Schiffen zu Häfen. Es wird somit exakt festgehalten, welcher Hafen wie häufig und von welchen Schiffen angesteuert wurde.
+Als diese Kategorisierung feststand, war uns klar, dass unser Netzwerk und die dafür notwendige Datenerhebung recht umfangreich werden würde. Aus diesem Grund haben wir uns für einen Zeitraum von zehn Jahren entschieden, um das Unterfangen in einer für uns durchführbaren Dimension zu halten.
+
+In unserem Codebuch definieren wir, wie genau wir die Daten für unsere Forschung erfassen. Im Folgenden gehen wir genauer auf die Edge- und Nodelist ein, die wir für unsere soziale Netzwerkanalyse erstellt haben.
+Zunächst ist in der Nodelist unter dem Attribut „Type“ festgelegt, um welche Art von Knoten es sich in unserem multiplexen Netzwerk jeweils handelt: So finden sich in der Nodelist Schiffe, mit der Zahl 1 codiert, und Häfen, die mit der Zahl 2 gekennzeichnet sind. Diese Unterscheidung ist für unser Netzwerk essenziell, da die Schiffe sich bewegen und auf ihren Reisen an verschiedenen Häfen anlegen. Außerdem können beide durch die Unterscheidung in der Visualisierung anders dargestellt und es kann nach Schiffen oder Häfen gefiltert werden. 
+Die Namen der Häfen oder Schiffe, in der Liste unter „Name“ festgehalten, kodierten wir mit Kürzeln, den „IDs“, als Node-Attribut. So steht etwa „sha“ für den Hafen St. Helena, oder „toh“ für Sir Robert Wigrams Schiff Tottenham. Diese Kürzel sind für das Netzwerk wichtig, um einzelne Knoten eindeutig identifizieren und voneinander unterscheiden zu können. Unsere IDs vereinfachen außerdem die Berechnung und Verarbeitung der Daten und machen diese effizienter. Mit ihnen arbeiteten wir auch in unserer Edgelist, dazu später mehr. 
+Das Attribut „Nationality“ half uns dabei, auf die Nationalität des Schiffes, beziehungsweise des Hafens, zu schließen. Dabei waren alle Schiffe als britisch vermerkt, da wir uns ausschließlich mit der britischen East India Company beschäftigten. Die Häfen jedoch stammten beispielsweise von Portugal über Südafrika oder Indien aus dem gesamten Einflussgebiet der Kompanie. So konnten wir bei der Auswertung unserer Daten nachvollziehen, in welchen Ländern der Einfluss der East India Company besonders groß war. 
+Für alle Schiffe in der Liste haben wir weitere Node-Attribute definiert, um mehr Informationen über sie festhalten zu können. Die erste Reise des jeweiligen Schiffs unter der East India Company haben wir unter „First Voyage“ mit der Jahreszahl codiert. Diese streckten sich über den von uns untersuchten Zeitraum von 1795 bis 1805. Der zugehörige Besitzer des Schiffs („Owner“) war für uns ebenfalls interessant, weil wir die einflussreichsten Akteure im Netzwerk erkennen wollten. Die Handelsschiffe der East India Company hatten sehr unterschiedliche Geschichten und Schicksale, die wir mithilfe des Node-Attributs „Fate of Ship“ kodierten. Die verschiedenen Optionen waren dabei „destroyed“ (zerstört), „sold“ (verkauft), „lost“ (verloren), „out of order“ (außer Betrieb), „sunken“ (versunken), „captured“ (gekapert) und „still in service“ (bis heute im Dienst). Jede davon hatten wir mit den Zahlen 1 bis 7 codiert. Darüber hinaus gab uns das Attribut „Port of registry“ Auskunft über den jeweiligen Heimathafen der Schiffe, beispielsweise Portsmouth, The Downs oder Deptford. 
+In unserer Edgelist vermerkten wir, in welchem Jahr ein bestimmtes Schiff an einem bestimmten Hafen anlegte. Außerdem ergänzten wir diese Beziehung mit der zugehörigen Jahreszahl. 
+Die Schiffe der East India Company von 1795 bis 1805 fanden wir auf der Seite threedecks. Weitere Informationen über sie wie den Heimathafen, Besitzer oder ihr Schicksal recherchierten wir auf Wikipedia oder in Artikeln.
+
+### 4. Analyse und Interpretation
+
+## 4.1 Das Gesamtnetzwerk
+
+```{r setup, warning=FALSE}
+library(igraph)
+library(tidygraph)
+library(ggraph)
+set.seed=123
+
+# für die Grafiken
+# set.seed=123 ermöglicht die Vergleichbarkeit der Grafiken
+```
+
+```{r Gesamnetzwerk erstellen, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+
+library(igraph)
+
+# Einlesen der Edge- und Nodelist
+el <- read.csv("https://raw.githubusercontent.com/vizzard2000/East-India-Company/refs/heads/main/Edgelist_EIC.csv", header=T, as.is=T, sep = ",")
+nodes <- read.csv("https://raw.githubusercontent.com/vizzard2000/East-India-Company/refs/heads/main/Nodelist_EIC.csv", header=T, as.is=T, sep = ",")
+
+# Matrix erstellen
+edgematrix <-as.matrix(el)
+
+# Zusammenführen von Edge- und Nodelist als igraph-Objekt s
+s <- graph_from_data_frame(d=edgematrix, vertices=nodes, directed=T)
+s
+```
+
+```{r Beschreibung des Netzwerks, message=FALSE, warning=FALSE, paged.print=TRUE}
+# Deskriptive Netzwerkbeschreibung
+
+## Anzahl der Knoten und Kanten
+anzahl_knoten <- vcount(s) #Unser Netzwerk weist 214 Knoten auf
+anzahl_kanten <- ecount(s) #Unser Netzwerk weist 850 Kanten auf
+
+# gerichtet?
+is_directed(s) #Ja, unser Netzwerk ist gerichtet
+
+# gewichtet?
+is_weighted(s) #Nein, unser Netzwerk ist nicht gewichtet
+
+#one-mode oder two-mode?
+is_bipartite(s) #Ja unser Netzwerk ist ein bimodales Netzwerk und besitzt zwei Knotentypen (Häfen und Schiffe)
+
+## ist das Netzwerk bereits vereinfacht?
+is.simple(s)
+
+# FALSE, das bedeutet, dass das Netzwerk nicht vereinfacht ist
+
+## besteht das Netzwerk aus Komponenten und wenn ja wie viele?
+is.connected(s)
+
+# FALSE, das bedeutet, dass das Netzwerk nicht verbunden ist. Es gibt mehrere Gruppen von Knoten, die nicht miteinander verbunden sind.
+
+count_components(s)
+
+# Unser Netzwerk besteht aus 3 Komponenten. Die größte Komponente enthält 209 Knoten, die zweite Komponente 3 Knoten und die dritte Komponente 2 Knoten.
+
+## Dichte des Netzwerks
+dichte <- edge_density(s, loops=FALSE)
+dichteprozent <- round(dichte* 100, 2)
+
+# Die Dichte unseres Gesamtnetzwerks beträgt 0.01864771. Also 1,86% der möglichen Kantenverbindungen sind tatsächlich realisiert.
+
+## Umfang des Netzwerks
+diameter(s)
+
+#Ein Durchmesser von 1 in unserem Netzwerk bedeutet, dass alle Akteure maximal nur einen Schritt voneinander entfernt sind. Es gibt also eine direkte Verbindung zwischen jedem beliebigen Paar von Akteuren. Dies deutet auf eine extrem starke Vernetzung und Zentralisierung innerhalb der East India Company in dieser Periode hin.
+
+## Pfaddistanzen (Distance)
+
+mean_distance(s)
+
+# Die durchschnittliche Pfaddistanz in unserem Netzwerk beträgt 1. Das bedeutet, dass die durchschnittliche Anzahl von Schritten, die benötigt werden, um von einem Knoten zu einem anderen zu gelangen, 1 beträgt. Dies deutet darauf hin, dass unser Netzwerk sehr dicht vernetzt ist und es keine isolierten Knoten gibt.
+
+farthest_vertices(s)
+
+# Die zwei Knoten, welche am weitesten von einander entfernt sind, sind lc und mlc. Also das Schiff Lascelles und der Hafen Malacca. Die Distanz beträgt trotzdem 1. Unser Netzwerk ist so dicht verknüpft ist, dass der größte kürzeste Pfad (also die weiteste Entfernung) lediglich 1 beträgt.
+
+## Reziprozität (wechselseitige Beziehungen)
+
+reciprocity(s) # Die Reziprozität unseres Netzwerks ist 0. Das bedeutet, dass es keine wechselseitigen Beziehungen zwischen den Knoten gibt. Es gibt also keine Verbindungen, bei denen zwei Knoten in beide Richtungen verbunden sind. Alle Verbindungen sind quasi Einbahnstraßen.
+
+```
+Unser Gesamtnetzwerk der East India Company zwischen 1795 und 1805, bestehend aus 214 Knoten (Schiffe und Häfen) und 850 Kanten, weist einige interessante Eigenschaften auf. Es handelt sich um ein gerichtetes, ungewichtetes und bimodales Netzwerk. Die Dichte des Netzwerks ist mit 1,86% relativ gering, was bedeutet, dass nur ein kleiner Teil der möglichen Verbindungen zwischen den Akteuren tatsächlich existiert (Fuhse 2018, S.52).
+Trotz der geringen Dichte ist das Netzwerk extrem stark vernetzt. Der Durchmesser des Netzwerks beträgt 1, was bedeutet, dass alle Akteure maximal einen Schritt voneinander entfernt sind. Die durchschnittliche Pfaddistanz beträgt ebenfalls 1, was die hohe Vernetzung bestätigt. Diese starke Vernetzung könnte auf eine zentrale Organisation und effiziente Kommunikationswege innerhalb der East India Company hindeuten (Jünger, 2023).
+Eine Besonderheit des Netzwerks ist die fehlende Reziprozität. Es gibt keine wechselseitigen Verbindungen zwischen den Knoten (Jünger 2023, S.395). Das ist auf die Art der Datenerhebung zurückzuführen, da wir nur die Anläufe der Schiffe in den Häfen erfasst haben.
+Zusammenfassend lässt sich sagen, dass das Handelsnetzwerk der East India Company zwischen 1795 und 1805 eine interessante Kombination aus geringer Dichte und starker Vernetzung aufweist. 
+```{r}
+## Zentralitätsmaße
+
+# Degree-Zentralität (Quantität der direkten Verbindungen)
+grad_zentralitaet <- degree(s)
+
+# Grad-Zentralität des Gesamtnetzwerks
+nodes$grad <- grad_zentralitaet
+
+
+# Gib die Node-Liste mit den Zentralitätsmaßen aus
+print(nodes)
+
+# Sortiere die Knoten nach Grad-Zentralität in absteigender Reihenfolge
+top_10_knoten <- sort(grad_zentralitaet, decreasing = TRUE)[1:10]
+
+# Gib die Namen und Grad-Zentralität der Top 10 Knoten aus
+print(top_10_knoten)
+
+# Interpretation: Unsere Top 10 Knoten, welche am meisten vernetzt sind (direkte Verbindungen) sind wie erwartet alles Häfen. Um unsere menschlichen Top-Player herauszufinden müssen wir anders vorgehen (später). Aber wir können bereits erkennen, dass die Häfen eine zentrale Rolle in unserem Netzwerk spielen. St. Helena ist der Hafen mit den meisten Verbindungen (155). Dann folgt Madras mit 103 Verbindungen und dann Hafen Saugor mit 59 Verbindungen. 
+
+```
+
+## 4.2 Zentralitätsmaße
+
+Die Analyse der Grad-Zentralität in unserem Netzwerk der East India Company liefert wichtige Einblicke in die Bedeutung der verschiedenen Akteure. Unsere Analyse hat ergeben, dass die Top 10 Knoten mit der höchsten Grad-Zentralität allesamt Häfen sind. Dies unterstreicht die zentrale Rolle der Häfen im Handelsnetzwerk der East India Company. Sie dienten als Knotenpunkte für den Warenumschlag und die Kommunikation und verbanden die verschiedenen Schiffe und Handelsposten miteinander (Chiocchetti, 2024).
+St. Helena erweist sich als der wichtigste Hafen mit 155 Verbindungen, gefolgt von Madras mit 103 und Saugor mit 59 Verbindungen. St. Helenas Bedeutung für die East India Company wird im Verlauf der Netzwerkanalyse näher beleuchtet. Die Top 10 Häfen waren wahrscheinlich entscheidend für den Erfolg der East India Company, da sie den Handel mit wichtigen Regionen ermöglichten und als Drehkreuze für den Warenverkehr dienten.
+Die Analyse der Grad-Zentralität liefert uns also erste wichtige Erkenntnisse über die zentralen Akteure im Handelsnetzwerk der East India Company. Um die Rolle der Schiffe und Personen besser zu verstehen, führen wir später weitere Analysen durch. 
+```{r}
+#Betweenness-Zentralität (Knoten als Verbindungsglied)
+
+betweenness_zentralitaet <- betweenness(s, directed = TRUE)
+betweenness_zentralitaet
+
+# In unserem Gesamtnetzwerk haben sämtliche Knoten eine Betweenness-Zentralität von 0. Das bedeutet, dass kein Knoten als Verbindungsglied fungiert. Alle Knoten sind gleich wichtig für die Verbindung der anderen Knoten.
+
+```
+
+```{r}
+#Closeness-Zentralität (wie nah ein Knoten an allen anderen Knoten ist)
+closeness_zentralitaet <- closeness(s, mode = "all")
+closeness_zentralitaet
+
+# Top 10 Knoten mit der größten Closeness-Zentralität
+top_10_closeness <- sort(closeness_zentralitaet, decreasing = TRUE)[1:10] 
+print(top_10_closeness) 
+
+# Interpretation der Top 10 Closeness-Knoten
+# Louisa und Kingston haben die höchste Closeness-Zentralität von 1. Das bedeutet, dass sie eine direkte Verbindung zu jedem anderen Knoten in ihrer Komponente haben. Sie sind extrem zentral in ihrem Teilnetzwerk. Hindostan hat eine Closeness von 0.5 und hat direkten Zugang zu 50% der Knoten in seiner Komponente. Obwohl St. Helena auch in den top_10 aufgelistet ist, hat sie nur eine Closeness von 0.002659574. Das liegt daran, dass St. Helena in der größten der drei Komponenten liegt und Louisa und Kingston in den kleineren Komponenten. 
+
+```
+Die Analyse der Closeness-Zentralität in unserem Netzwerk der East India Company zeigt, dass die Knoten "Louisa" und "Kingston" die höchste Closeness-Zentralität von 1 aufweisen. Dies bedeutet, dass sie eine direkte Verbindung zu jedem anderen Knoten in ihrer jeweiligen (kleinen) Komponente haben und somit in ihren Teilnetzwerken extrem zentral positioniert sind (Jünger 2023, S.396). "Hindostan" hat eine Closeness-Zentralität von 0,5, was bedeutet, dass dieser Knoten direkten Zugang zu 50 % der Knoten in seiner Komponente hat. "St. Helena", obwohl in den Top 10 aufgeführt, hat nur eine Closeness-Zentralität von 0,002659574. Dies liegt daran, dass "St. Helena" sich in der größten der drei Komponenten befindet.
+
+```{r Erste einfache Visualisierung des Gesamtnetzwerks als Übersicht, fig.height=10, fig.width=14, message=TRUE, warning=TRUE, paged.print=TRUE}
+
+plot(s,
+     asp=0, 
+     layout=layout_with_kk,
+     edge.arrow.size=.5,
+     vertex.size=10,
+     main ="Übersicht Gesamtnetzwerk")
+```
+
+## 4.3 Teilnetzwerke: Schiffsbesitzer
+
+In der East-India-Company lief es meist so ab, dass eine wohlhabende Privat-Person, einen klassischer Schiffstyp für solche Expeditionen, kaufte. Anschließend wendete sich jene Privatperson an die East India Company, um mit dieser eine Handelsfahrt zu planen, von der beide profitieren. Mit unserem Datensatz sind wir in der Lage herauszufinden, welche Personen in der East India Company die meisten Schiffe besaßen.
+
+```{r Wigram}
+
+# Die fünf häufigsten Owner
+
+# Entferne alle Zeilen, in denen der Eigentümer "99" ist
+nodelist <- nodes[nodes$owner != "99", ]
+
+# Zähle die Häufigkeit jedes Eigentümer
+owner_counts <- table(nodes$owner)
+
+# Sortiere die Häufigkeiten absteigend
+owner_counts <- sort(owner_counts, decreasing = TRUE)
+
+# Gib die Top 5 Eigentümer aus
+print(head(owner_counts, 6))
+```
+
+
+Neben John Locke, John Woolmore, Matthew White und William Moffat war Sir Robert Wigram der Besitzer mit den meisten Schiffen in dem untersuchten Zeitraum. Der Politiker, Schiffsbauer und Geschäftsmann besaß im Zeitraum 1795-1805 die meisten heute dokumentierten Schiffe, die für die East India Trading Company im Einsatz waren (wegen des Historischen Hintergrunds und mangelnder Wissenschaftlicher Quellen muss sich auf Threedecks und Wikipedia verlassen werden).
+
+## 4.3.1 Sir Robert Wigram
+
+```{r Wigram Visualisierung}
+
+# Sir Robert Wigram ist der Owner mit den meisten Schiffen, denn er hat in der Zeit von 1795 bis 1805 5 Schiffe besessen.
+
+# Filtere die Nodelist, um nur die Knoten zu behalten, die in der Edgelist für Sir Robert Wigram vorhanden sind
+selected_vertices <- V(s)[(V(s)$type == 1 & V(s)$owner == "Sir Robert Wigram") | (V(s)$type != 1) | (V(s)$type == 1 & is.na(V(s)$owner))]
+
+# Erstelle einen Subgraphen, der nur die ausgewählten Knoten enthält
+s_wigrim_a <- induced_subgraph(s, vids = selected_vertices)
+
+# Entferne isolierte Knoten (Knoten ohne Verbindungen)
+s_wigrim <- delete.vertices(s_wigrim_a, which(degree(s_wigrim_a) == 0))
+
+# Farben und Formen für die Knoten setzen
+V(s_wigrim)[V(s_wigrim)$type == 1]$color <- "orange"  # Schiffe orange
+V(s_wigrim)[V(s_wigrim)$type == 2]$color <- "lightblue"  # Häfen blau
+
+V(s_wigrim)[V(s_wigrim)$type == 1]$shape <- "square"
+V(s_wigrim)[V(s_wigrim)$type == 2]$shape <- "circle"
+
+# Knotengröße reduzieren
+vertex_size <- 5  # Knoten kleiner machen
+
+layout <- layout_with_graphopt(s_wigrim)  # Graphopt Layout für den gefilterten Graphen
+
+# Funktion zum Vergrößern der Abstände (optional)
+scale_layout <- function(layout, factor = 3) {
+  apply(layout, 2, function(x) (x - min(x)) / (max(x) - min(x)) * factor)
+}
+
+# Vergrößerte Abstände zwischen den Knoten (optional)
+# scaled_layout <- scale_layout(layout, factor = 5) 
+
+# Setze die Knotennamen basierend auf der Spalte "if_Begriff"
+V(s_wigrim)$name <- ifelse(V(s_wigrim)$name %in% V(s_wigrim)$name, V(s_wigrim)$id_begriff, NA)
+
+# Plot
+plot(s_wigrim,
+     asp=0, # Ganzer Raum ausgenutzt
+     layout=layout, # Oder scaled_layout, falls verwendet
+     vertex.size=vertex_size, # Kleinere Knoten
+     vertex.label=ifelse(!is.na(V(s_wigrim)$name), V(s_wigrim)$name, NA), # Nur vorhandene Labels anzeigen
+     vertex.label.cex=0.7, # Kleinere Labels
+     edge.arrow.size=0.2, # Kleinere Pfeile
+     edge.color="grey50",
+     edge.curved=curve_multiple(s_wigrim)) 
+
+# Beschriftung hinzufügen
+mtext("Alle Schiffe von Sir Robert Wigram und die angesteuerten Häfen", 
+      side = 1,  # Unten
+      line = 3,  # Abstand vom unteren Rand
+      cex = 1.2)  # Textgröße
+
+# Ränder zurücksetzen
+par(mar=c(0,0,0,0))
+```
+
+
+Unser Teilnetzwerk zeigt alle Schiffe von Sir Robert Wigram und die angesteuerten Häfen. Die Schiffe sind orange und die Häfen blau. Aus unser Visualiserung ergeben sich die fünf Schiffe Tottenham, Retreat, Wexford, Walthamstow und Lady Jane Dundas, welche zwischen 1795 und 1805 in Wigrams Besitz waren.
+
+```{r Wigram Zentralitätsmaße}
+
+# Berechne die Zentralitätsmaße für s_wigrim
+grad_zentralitaet_wigrim <- degree(s_wigrim)
+betweenness_zentralitaet_wigrim <- betweenness(s_wigrim)
+closeness_zentralitaet_wigrim <- closeness(s_wigrim)
+
+# Füge die Zentralitätsmaße als neue Spalten zur Node-Liste hinzu
+V(s_wigrim)$grad <- grad_zentralitaet_wigrim
+V(s_wigrim)$betweenness <- betweenness_zentralitaet_wigrim
+V(s_wigrim)$closeness <- closeness_zentralitaet_wigrim
+
+print(V(s_wigrim))
+
+# Extrahiere die Grad-Zentralität aller Knoten
+grad_zentralitaet <- degree(s_wigrim)
+
+# Erstelle einen Vektor mit den Typen der Knoten
+typen <- V(s_wigrim)$type
+
+# Finde den maximalen Grad für jeden Typ (Schiffe und Häfen)
+max_grad_pro_typ <- tapply(grad_zentralitaet, typen, max)
+
+# Gib die Ergebnisse aus
+cat("Maximaler Grad für Typ 1 (Schiffe):", max_grad_pro_typ[1], "\n")
+cat("Maximaler Grad für Typ 2 (Häfen):", max_grad_pro_typ[2], "\n")
+
+# Finde den Knoten mit dem maximalen Grad für jeden Typ
+namen_max_grad <- tapply(names(grad_zentralitaet), typen, function(x) x[which.max(grad_zentralitaet[x])])
+
+# Gib die Namen der Knoten mit dem maximalen Grad aus
+cat("Knoten mit maximalem Grad für Typ 1 (Schiffe):", namen_max_grad[1], "\n")
+cat("Knoten mit maximalem Grad für Typ 2 (Häfen):", namen_max_grad[2], "\n")
+
+# Das Schiff Walthamstow hat einen Degree-Wert von 18 und der Hafen St. Helena einen Degree-Wert von 8. Sie haben damit in ihrem jeweiligen Typen die meisten Verbindungen und sind am zentralsten. Das macht natürlich SInn, da St. Helena auch der Hafen ist der in unserem Gesamtetzwerk am häufigsten angesteuert wird und somit essenziell für die East India Company war.
+```
+Das Schiff Walthamstow hat einen Degree-Wert von 18 und der Hafen St. Helena einen Degree-Wert von 8. Das bedeutet, dass Wigrams Schiff "Walthamstow" insgesamt 18 Häfen in der Zeitspanne 1795-1805 angefahren hatte, wohingegen der Hafen St. Helena in der selben Zeitspanne von 8 Schiffen Wigrams angesteuert wurde. Sie haben damit in ihrem jeweiligen Typen die meisten Verbindungen und sind am zentralsten. Das macht natürlich Sinn, da St. Helena auch der Hafen ist, der in unserem Gesamtetzwerk am häufigsten angesteuert wird und somit essenziell für die East India Company war. Die Walthamsstow ist außerdem mit einem Wert vo 0.71 der Knoten mit der höchsten Closeness-Zentralität. Das bedeutet, dass sie am schnellsten mit allen anderen Knoten verbunden ist, das spielt jedoch in unserem Netzwerk keine große Rolle, da alle Knoten maximal einen Schritt voneinander entfernt sind. Dennoch zeigt es, dass die Walthamstow ein wichtiger Knotenpunkt in ihrem Teilnetzwerk ist, da er die meisten Verbindungen zu Knoten des Typ "Hafen" besitzt.
+
+## 4.4 Vergleich der Fahrten nach Indien während des Kriegs und während des Friedens
+
+Uns interessiert der Vergleich zwischen den Fahrten der East India Company während der Kriegsjahre und den Fahrten während der Friedensjahre. Hier fokusieren wir uns sowohl auf die Fahrten nach Indien, als auch die gesamten Fahrten. 
+
+```{r Fahrten während des Kriegs nach Indien und Fahrten während des Friedens nach Indien}
+
+# Filtern nach Fahrten während des Kriegs
+fahrten_krieg <- filter(el_krieg, time %in% c("1798", "1799")) %>% count(to) %>% arrange(desc(n))
+
+# Filtern nach indischen Häfen
+fahrten_krieg_zahl <- filter(fahrten_krieg, to %in% c("bmb", "khi", "tcy", "sag", "bng", "mrs", "cta", "kge", "tm", "dh", "bt", "vzg", "kkd", "nsp", "cnn", "srt", "msp", "cey", "oce", "ang", "coc", "cal", "knk"))
+
+# auszählen von Fahrten während eines Kriegs an indische Häfen
+fahrten_krieg_indien <- fahrten_krieg_zahl %>% count(to) %>% arrange(desc(n))
+
+# Gesamtanzahl der Fahrten während eines Kriegs nach Indien
+gesamt_fahrten_krieg_indien <- sum(fahrten_krieg_indien$n)
+
+# Gesamtanzahl der Fahrten während eines Kriegs insgesamt
+gesamt_fahrten_krieg <- sum(fahrten_krieg$n)
+
+
+# Filtern nach Fahrten ohne Krieg
+fahrten_ohne_krieg <- filter(el_ohne_krieg, time %in% c("1800", "1801")) %>% count(to) %>% arrange(desc(n))
+
+# Filtern nach indischen Häfen
+fahrten_ohne_krieg_zahl <- filter(fahrten_ohne_krieg, to %in% c("bmb", "khi", "tcy", "sag", "bng", "mrs", "cta", "kge", "tm", "dh", "bt", "vzg", "kkd", "nsp", "cnn", "srt", "msp", "cey", "oce", "ang", "coc", "cal", "knk"))
+
+# auszählen von Fahrten ohne Krieg an indische Häfen
+fahrten_ohne_krieg_indien <- fahrten_ohne_krieg_zahl %>% count(to) %>% arrange(desc(n))
+
+# Gesamtanzahl der Fahrten ohne Krieg nach Indien
+gesamt_fahrten_ohne_krieg_indien <- sum(fahrten_ohne_krieg_indien$n)
+
+
+# Gesamtanzahl der Fahrten ohne Krieg insgesamt
+gesamt_fahrten_ohne_krieg <- sum(fahrten_ohne_krieg$n)
+
+# Ergebnisse anzeigen
+# Gesamtanzahl der Fahrten während eines Kriegs insgesamt
+gesamt_fahrten_krieg
+gesamt_fahrten_ohne_krieg
+
+# Gesamtanzahl der Fahrten während eines Kriegs nach Indien
+gesamt_fahrten_krieg_indien
+gesamt_fahrten_ohne_krieg_indien
+```
+
+Mit unserem Datensatz ist es möglich herauszufinden, wie viele Fahrten während eines Kriegs der East India Trading Company gemacht wurden und wie viele während kein Krieg herrschte. Darüber können wir Vermutungen  anstellen, wie sich Krieg auf das Gesamtnetzwerk der Fahrten auswirkt, sowie ob es Unterschiede in den Fahrten nach Indien gibt. Wir haben die Edgelist nach "time", also den Jahren gefiltert, einmal während des vierten Myrose-Kriegs von 1798-1799 und während kein Krieg stattgefunden hat von 1800-1801. Außerdem haben wir die Fahrten in einer zweiten Edgelist nur auf indische Häfen beschrenkt. In der Zeitspanne ohne Krieg sind insgesamt 136 Fahrten dokumentiert. Im Gegensatz dazu wurden während der Kriegsjahre nur 38 Fahrten angestellt. Auch die Fahrten nach Indien haben sich während des Kriegs minimiert, wo es von 1800-1801 noch 11 Fahrten waren, sind während des vierten Mysore Kriegs nur noch 6 Fahrten nach Indien angestellt worden. Es sei gesagt, dass wir natürlich keine Auskunft darüber treffen können, wie viele Fahrten tatsächlich stattgefunden haben, da es sich hierbei um Dokumentationen von vor über 200 Jahren handelt, deren Vollständigkeit dementsprechend kritisch zu hinterfragen ist. Doch betrachtet man nur die Zahlen lassen sich verschiedene Vermutungen über die Rolle und das Verhalten der Handelsschiffe der East India Company während Kriegszeiten aufstellen. Es ist denkbar, dass die Kriege eine finanzielle und strukturelle Herausforderung für die Kompanie waren und sie dementsprechend weniger Fahrten planen konnten, da schlichtweg das Geld fehlte. Außerdem ist es denkbar, dass indische Regionen ebenso gemieden wurden, da sie ein Sicherheitsrisiko für ihre Schiffe und Ware darstellten. Die Schiffe zu bewaffnen, reparieren und zu ersetzen war eine kostspielige Angelegenheit, die die East India Company während Kriegszeiten nicht eingehen wollte (Chiocchetti 2024, S.2).
+
+```{r Teilnetzwerk und Netzwerkanalyse Teilnetzwerk während des Kriegs}
+library(igraph)
+
+# Degree aller Knoten berechnen
+degrees <- degree(s_krieg)  
+
+# Knotentypen abrufen 
+knoten_typen <- V(s_krieg)$type  # Numerisches Attribut
+
+# Höchster Degree für Schiffe (Type 1)
+type1_degrees <- degrees[knoten_typen == 1]
+type1_max_node <- which.max(type1_degrees)
+type1_max_name <- V(s_krieg)[knoten_typen == 1][type1_max_node]$name
+type1_max_degree <- type1_degrees[type1_max_node]
+
+# Top 5 Degree für Häfen (Type 2)
+type2_degrees <- degrees[knoten_typen == 2]
+type2_sorted_indices <- order(type2_degrees, decreasing = TRUE)[1:5]  # Indizes der Top 5
+type2_top5_names <- V(s_krieg)[knoten_typen == 2][type2_sorted_indices]$name
+type2_top5_degrees <- type2_degrees[type2_sorted_indices]
+
+# Ergebnisse ausgeben
+cat("Type 1 - Knoten mit höchstem Degree:", type1_max_name, "(", type1_max_degree, ")\n\n")
+cat("Type 2 - Top 5 Knoten mit höchstem Degree:\n")
+for (i in 1:length(type2_top5_names)) {
+  cat(i, ":", type2_top5_names[i], "(", type2_top5_degrees[i], ")\n")
+}
+
+library(igraph)
+
+# Betweenness und Closeness berechnen
+betweenness_values <- betweenness(s_krieg)
+closeness_values <- closeness(s_krieg)
+
+# Knotentypen abrufen (Attribut 'type' muss existieren)
+knoten_typen <- V(s_krieg)$type  # Numerisches Attribut
+
+# Schiffe mit höchster Betweenness finden
+type1_betweenness <- betweenness_values[knoten_typen == 1]
+type1_max_betweenness_node <- which.max(type1_betweenness)
+type1_max_betweenness_name <- V(s_krieg)[knoten_typen == 1][type1_max_betweenness_node]$name
+type1_max_betweenness <- type1_betweenness[type1_max_betweenness_node]
+
+# Häfen mit höchster Betweenness finden
+type2_betweenness <- betweenness_values[knoten_typen == 2]
+type2_max_betweenness_node <- which.max(type2_betweenness)
+type2_max_betweenness_name <- V(s_krieg)[knoten_typen == 2][type2_max_betweenness_node]$name
+type2_max_betweenness <- type2_betweenness[type2_max_betweenness_node]
+
+# Schiffe mit höchster Closeness finden
+type1_closeness <- closeness_values[knoten_typen == 1]
+type1_max_closeness_node <- which.max(type1_closeness)
+type1_max_closeness_name <- V(s_krieg)[knoten_typen == 1][type1_max_closeness_node]$name
+type1_max_closeness <- type1_closeness[type1_max_closeness_node]
+
+# Häfen mit höchster Closeness finden
+type2_closeness <- closeness_values[knoten_typen == 2]
+type2_max_closeness_node <- which.max(type2_closeness)
+type2_max_closeness_name <- V(s_krieg)[knoten_typen == 2][type2_max_closeness_node]$name
+type2_max_closeness <- type2_closeness[type2_max_closeness_node]
+
+# Ergebnisse ausgeben
+cat("Betweenness:\n")
+cat("Type 1 - Knoten mit höchster Betweenness:", type1_max_betweenness_name, "(", type1_max_betweenness, ")\n")
+cat("Type 2 - Knoten mit höchster Betweenness:", type2_max_betweenness_name, "(", type2_max_betweenness, ")\n\n")
+
+cat("Closeness:\n")
+cat("Type 1 - Knoten mit höchster Closeness:", type1_max_closeness_name, "(", type1_max_closeness, ")\n")
+cat("Type 2 - Knoten mit höchster Closeness:", type2_max_closeness_name, "(", type2_max_closeness, ")\n")
+```
+
+```{r Degree-Berechnung in Friedenszeiten}
+
+# Degree aller Knoten berechnen
+degrees_ohne_krieg <- degree(s_ohne_krieg)  
+
+# Knotentypen abrufen 
+knoten_typen_ohne_krieg <- V(s_ohne_krieg)$type  # Numerisches Attribut
+
+# Höchster Degree für Schiffe (Type 1)
+type1_degrees_ohne_krieg <- degrees_ohne_krieg[knoten_typen_ohne_krieg == 1]
+type1_max_node_ohne_krieg <- which.max(type1_degrees_ohne_krieg)
+type1_max_name_ohne_krieg <- V(s_ohne_krieg)[knoten_typen_ohne_krieg == 1][type1_max_node_ohne_krieg]$name
+type1_max_degree_ohne_krieg <- type1_degrees_ohne_krieg[type1_max_node_ohne_krieg]
+
+# Top 5 Degree für Häfen (Type 2)
+type2_degrees_ohne_krieg <- degrees_ohne_krieg[knoten_typen_ohne_krieg == 2]
+type2_sorted_indices <- order(type2_degrees_ohne_krieg, decreasing = TRUE)[1:5]  # Indizes der Top 5
+type2_top5_names <- V(s_ohne_krieg)[knoten_typen_ohne_krieg == 2][type2_sorted_indices]$name
+type2_top5_degrees <- type2_degrees_ohne_krieg[type2_sorted_indices]
+
+# Ergebnisse ausgeben
+cat("Type 1 (Schiffe) - Knoten mit höchstem Degree:", type1_max_name_ohne_krieg, "(", type1_max_degree_ohne_krieg, ")\n\n")
+cat("Type 2 (Häfen) - Top 5 Knoten mit höchstem Degree:\n")
+for (i in 1:5) {
+  cat(i, ":", type2_top5_names[i], "(", type2_top5_degrees[i], ")\n")
+}
+```
+
+Analysiert man das Teilnetzwerk der Schiffsfahrten während eines Krieges, lässt sich erkennen, dass auch in diesen Zeiten St. Helena der wichtigste Hafen ist. Platz zwei belegt Madras, Platz 3 Saugor, Platz 4 Madeira und Platz 5 die Bengalen.
+Das Schiff mit dem höchsten Degree-Wert ist die Cumberland, die 12 Verbindungen zu Häfen hat. Die Höchste Closeness hat hingegen die Ocean, jedoch hat dieser Wert in unserem Netzwerk keinen unbedingten Nutzen. Deshalb wird dieser und die Bewtweeness im weiteren Verlauf nicht weiter betrachtet. 
+Analysiert man den Degree der Knoten von den Daten außerhalb der Kriegsjahre, so ist St. Helena auch hier der wichtigste Hafen. Den zweiten Platz belegt Madras, gefolgt von dem Kap der guten Hoffnung, Calcutta und Kedgeree. Von den Schiffen hat hier die Queen den höchsten Degree-Wert, jedoch ist dieser mit 10 niedriger als im vorherigen Teilnetzerk.
+Besonders interessant an dieser Analyse ist nicht nur die Tatsache, das St. Helena stetig der Hauptanlaufpunkt der Schiffe ist, sondern auch, dass die Häfen Madras und Calcutta in beiden Netzwerken eine wichtige Rolle spielen. Auch die Ausgeglichenheit an indischen Häfen ist bemerkenswert, obwohl dort ein Krieg herrscht. Sucht man auf der Weltkarte nach Mysore und Maratha, wird schnell klar, dass die angefahrenen Häfen weder im Gebiet der Maratha noch im Gebiet der Mysore liegen. Dies könnte ein Hinweis darauf sein, dass die East India Company versucht hat, die Kriegsgebiete zu meiden und sich auf andere Regionen zu konzentrieren. Um Auskunft darüber zu erlangen, müssen die Top 5 Häfen des Gesamtnerzwerkes betrachtet werden die da wären St. Helena, Madras, Saugor, Cape of Good Hope und Calcutta. Dabei wird klar, das diese Häfen nicht angefahren wurden, weil sie nicht im Kriegsgebiet lagen, sondern weil sie wichtige Knotenpunkte für die East India Company waren. Madras beispielsweise war ein wichtiger Knotenpunkt, an dem die Herstellung und Verbreitung von Exportgütern wie Textilien gergelt wurde (Williams 2022, s.1186). Obendrein sah die britische Krone schon 1775 Indien als Kolonie an (William 2019, S.2). Demnach ist es nicht verwunderlich, dass dieser Hafen auch in Kriegszeiten angefahren wurde. Somit lässt sich sagen, dass die East India Company stets ihre Stützpunkte gleichermaßen anfuhr, unabhängig davon, ob Krieg herrschte oder nicht. Diese Knotenpunkte hielten die gesamte Firma am Leben und die wichtigsten Handelsrouten darstellten. Auch wenn die East India Company zwar aus Großbritanien kommt, spielte sich ihr Tun größtenteils in Indien ab, was auch die hohe Anzahl an indischen Häfen in unserem Netzwerk erklärt. Auch die Bengalen waren nicht grundlos zur damaligen Zeit eine der reichsten Regionen der Welt und ein wichtiger Drehpunkt für den Handel (Siddiqui 2024, S.5). Nach der Schlacht von Plassey 1757 wurde Bengalen zur wichtigsten Kolonie der East India Company (Siddiqui 2024, S.7). Die Bengalen waren damals ein essenzieller militärischer Stützpunkt der East India Company und ebenso ein zentraler Handelskontrollpunkt. Dies könnte auf jeden Fall erklären, wieso es in Kriegsjahren häufiger angefahren wurde als in Friedenszeiten. Das Gebiet der Maratha und Mysore war nämlich nicht weit entfernt von der Region der Bengalen. Die Handelschiffe wurden umfunktioniert und machten nun Lieferungen an Waffen und Soldaten (Chiocchetti 2024, S.2-11) . Der klassische Handel lief jedoch nebenher weiter, da die dort ansässigen Fabriken in Betrieb bleiben mussten (Williams 2022, s.1188). Meist sind die Schiffe im Konvoi gefahren, um sich vor Piraten und anderen Unternehmen zu schützen (Chiocchetti 2024, 5)
+
+Also kann man zusammengefasst behaupten, dass die East India Company in Kriegszeiten ihre Handelsrouten nicht änderte, aber weniger Schiffe losschickte. Das wiederlegt unsere Arbeitshypothese, in welcher wir mutmaßten, dass die East India Company während Kriegszeiten vermehrt Schiffe nach Indien schickte um ihre Machtposition weiter auszubauen.
+
+
+# 5 Visualisiserung
+
+## 5.1 Die Gesamtvisualisierung
+
+
+```{r Einfache Visualisierung des erstellten Objekt, fig.height=10, fig.width=16, message=TRUE, warning=TRUE, paged.print=TRUE}
+
+# Setzt die Ränder
+par(mar=c(0,0,0,0))
+
+# Farben zuweisen (zuerst Schiffe, dann Häfen)
+V(s)[V(s)$type == 1]$color <- "orange"  # Schiffe orange
+V(s)[V(s)$type == 2]$color <- "lightblue"  # Häfen blau
+
+# Knotengröße reduzieren
+vertex_size <- 2.5  # Knoten kleiner machen
+
+# Anpassung des Layouts 
+# Mehrere Layouts ausprobieren, um optimale Darstellung zu finden:
+# layout <- layout_with_fr(s, niter = 5000, area = vcount(s)^10)  # Fruchterman-Reingold
+# layout <- layout_with_kk(s)  # Kamada-Kawai
+layout <- layout_with_graphopt(s)  # Graphopt 
+
+# Funktion zum Vergrößern der Abstände (optional)
+scale_layout <- function(layout, factor = 3) {
+  apply(layout, 2, function(x) (x - min(x)) / (max(x) - min(x)) * factor)}
+
+# Setze die Knotennamen basierend auf der Spalte "if_Begriff"
+V(s)$name <- V(s)$id_begriff
+
+# Plot
+par(mar = c(5, 4, 4, 2) + 0.1)  # Ränder anpassen 
+
+# Netzwerk plotten
+plot(s,
+     asp=0, # Ganzer Raum ausgenutzt
+     layout=layout_with_fr(s, niter = 5000, area = vcount(s)^10), # Fruchterman-Reingold Layout
+     vertex.size=vertex_size, # Kleinere Knoten
+     vertex.label=V(s)$name, # Beschriftung der Knoten 
+     vertex.label.cex=0.5, # Kleinere Labels
+     edge.arrow.size=0.2, # Kleinere Pfeile
+     edge.color="grey50",
+     edge.curved=curve_multiple(s))
+
+# Legende hinzufügen
+legend("bottomright",  # Position der Legende
+       legend = c("Schiff", "Hafen"), 
+       pch = 21, 
+       pt.bg = c("orange", "lightblue"), 
+       pt.cex = 1.5, 
+       bty = "n") 
+mtext("Schiffe und Häfen der EIC zwischen 1795 und 1805", 
+      side = 1, 
+      line = 3, 
+      cex = 1.2, 
+      col = "black")  # Setze die Farbe auf schwarz
+
+
+```
+
+Unsere erste Gesamtvisualisierung zeigt zwei verschiedene Knotentypen
+anhand farblicher Änderungen und wie diese miteinander agieren. Man erkennt ein gerichtetes Netzwerk, das ausschließlich über die Knoten des
+Typ Zwei (Häfen) läuft. Dies ist eine logische Konsequenz, da unsere
+Knoten mit Typ Eins (Schiffe) nicht direkt miteinander zusammenhängen,
+sondern lediglich die selben Routen wählen. Desweiteren ist gut zu
+erkennen, dass Häfen in der Mitte, einen hohen Degree Wert haben.
+Dagegen sind die Häfen in den zwei kleineren Komponenten teilweise nur einmal von Schiffen
+angefahren worden.
+
+## 5.2 Vergleich der Teilnetzwerke während und außerhalb des Krieges
+
+Wir unterteilen unser Gesamtnetzwerk jetzt in zwei Teilnetzwerke um die Auswirkungen des Krieges auf die Schifffahrt der East India Company zu untersuchen. Dazu betrachten wir die Kriegsjahre 1798-1799 (vierter Mysore-Krieg) und 1803-1805 (zweiter Marathenkrieg) und vergleichen diese mit den Jahren 1795-1797 und 1800-1802, in denen kein Krieg stattfand. Wir untersuchen, ob es Unterschiede in der Schifffahrt der East India Company während der Kriegsjahre gab und ob sich die Netzwerke in ihrer Struktur unterscheiden. 
+
+```{r Teilnetzwerke 1798-99 1803-1805}
+
+library(dplyr)
+library(igraph)
+
+# Filtern nach Kanten während der Kriegsjahre
+el_krieg <- filter(el, time %in% c("1798", "1799", "1803", "1804", "1805"))
+
+# Filtern nach Kanten während kein Krieg stattfand
+el_ohne_krieg <- filter(el, time %in% c("1795", "1796", "1797", "1800", "1801", "1802"))
+
+# Filtern nach Knoten, die Indisch und Englisch sind, Englisch wegen der Schiffe, Indisch wegen der Häfen
+nl_india <- filter(nodes, nationality %in% c("India", "india", "British"))
+
+# Extrahiere alle Knoten aus der Edgelist für Kriegsjahre
+nodes_in_krieg <- unique(c(el_krieg$from, el_krieg$to))
+
+# Filtere die Nodelist, um nur die Knoten zu behalten, die in der Kriegsjahre-Edgelist vorhanden sind
+filtered_nl_india_krieg <- filter(nodes, id %in% nodes_in_krieg)
+
+# Extrahiere alle Knoten aus der Edgelist für Jahre ohne Krieg
+nodes_in_ohne_krieg <- unique(c(el_ohne_krieg$from, el_ohne_krieg$to))
+
+# Filtere die Nodelist, um nur die Knoten zu behalten, die in der Edgelist ohne Krieg vorhanden sind
+filtered_nl_india_ohne_krieg <- filter(nodes, id %in% nodes_in_ohne_krieg)
+
+edgematrix_krieg <-as.matrix(el_krieg)
+s_krieg <- graph_from_data_frame(d=edgematrix_krieg, vertices=filtered_nl_india_krieg, directed=T)
+
+edgematrix_ohne_krieg <-as.matrix(el_ohne_krieg)
+s_ohne_krieg <- graph_from_data_frame(d=edgematrix_ohne_krieg, vertices= filtered_nl_india_ohne_krieg, directed=T)
+
+
+
+# Setup für Visualisierung
+par(mfrow = c(1,2)) # ermöglicht zwei Abbildungen parallel zu setzen
+set.seed = 123 # ermöglicht stabile Wiederholung
+
+V(s_krieg)$name <- V(s_krieg)$id_begriff #id_begriff als Label festlegen
+
+V(s_ohne_krieg)$name <- V(s_ohne_krieg)$id_begriff #id_begriff als Label festlegen
+
+vertex_size <- 6
+
+# Funktion zum Vergrößern der Abstände (optional)
+scale_layout <- function(layout, factor = 3) {
+  apply(layout, 2, function(x) (x - min(x)) / (max(x) - min(x)) * factor)
+}
+
+# Visualisierung der Teilnetzwerke während des Krieges und außerhalb des Krieges
+plot(s_krieg,
+     asp=0, # Ganzer Raum ausgenutzt
+     layout=layout, # Oder scaled_layout, falls verwendet
+     vertex.size=vertex_size, # Kleinere Knoten
+     vertex.label=V(s_krieg)$name, # Beschriftung der Knoten 
+     vertex.label.cex=0.3, # Kleinere Labels
+     edge.arrow.size=0.1, # Kleinere Pfeile
+     edge.color="grey50",
+     edge.curved=curve_multiple(s_krieg),
+     vertex.color=ifelse(V(s_krieg)$type == 1, "orange", "lightblue") # Knotenfarbe nach Typ
+)
+title("Krieg", cex.main = 1.5)
+
+plot(s_ohne_krieg,
+     asp=0, # Ganzer Raum ausgenutzt
+     layout=layout, # Oder scaled_layout, falls verwendet
+     vertex.size=vertex_size, # Kleinere Knoten
+     vertex.label=V(s_ohne_krieg)$name, # Beschriftung der Knoten 
+     vertex.label.cex=0.3, # Kleinere Labels
+     edge.arrow.size=0.1, # Kleinere Pfeile
+     edge.color="grey50",
+     edge.curved=curve_multiple(s_ohne_krieg),
+     vertex.color=ifelse(V(s_ohne_krieg)$type == 1, "orange", "lightblue") # Knotenfarbe nach Typ
+)
+title("Frieden", cex.main = 1.5)
+
+# Ränder zurücksetzen
+par(mfrow = c(1,1))
+```
+Dieser Vergleich von Teilnetzwerken zeigt zum einen das Netzwerk der
+Schiffsfahrten während des vierten Mysore-Krieg von 1798-1799 und des
+zweiten Marathenkriegs von 1803-1805, sowie die Schiffsfahrten von
+1795-1805 in denen kein Krieg zwischen der East India Trading Company
+und den indischen Regionen stattfand (1795-1797 + 1800-1803).
+
+
+
+## 5.3 Visualisierung der wichtigsten Häfen
+
+```{r Visualisierung der 10 wichtigsten Häfen, fig.height=10, fig.width=16, message=TRUE, warning=TRUE, paged.print=TRUE}
+
+
+ids_to_keep <- c("St Helena", "Madras", "Saugor", "Cape of Good Hope", "Calcutta", 
+                 "Bengal", "Diamond Harbour", "bombay", "Whampoa Anchorage", "Kedgeree") # Ersetze durch die tatsächlichen Knotennamen
+
+# Finde alle Knoten des Attributs "type", die entfernt werden sollen (z.B. type == 2)
+nodes_to_remove <- V(s)[V(s)$type == 2]
+
+# Entferne die Knoten, die in der Ausnahme-Liste sind (die Knoten, die du behalten möchtest)
+nodes_to_remove <- nodes_to_remove[!(V(s)[nodes_to_remove]$id_begriff %in% ids_to_keep)]
+
+# Entferne die verbleibenden Knoten aus dem Graphen
+s_reduced <- delete_vertices(s, nodes_to_remove)
+
+# Finde alle Knoten, die mit den 10 Knoten verbunden sind, die du unbedingt behalten möchtest
+nodes_to_keep_in_graph <- V(s_reduced)[V(s_reduced)$id_begriff %in% ids_to_keep]
+
+# Finde alle Knoten, die mit diesen verbunden sind (direkt oder indirekt)
+connected_nodes <- unique(unlist(lapply(nodes_to_keep_in_graph, function(node) {
+  subcomponent(s_reduced, node, mode = "all")
+})))
+
+# Erstelle den finalen Subgraphen, der nur die verbundenen Knoten enthält
+s_final <- induced_subgraph(s_reduced, vids = connected_nodes)
+
+# Farben zuweisen (zuerst Schiffe, dann Häfen)
+V(s_final)[V(s_final)$type == 1]$color <- "orange"  # Schiffe orange
+V(s_final)[V(s_final)$type == 2]$color <- "lightblue"  # Häfen blau
+
+V(s)[V(s)$type == 1]$shape <- "square"  
+V(s)[V(s)$type == 2]$shape <- "circle" 
+# Knotengröße reduzieren
+vertex_size <- 2.5  # Knoten kleiner machen
+
+# Anpassung des Layouts 
+# Mehrere Layouts ausprobieren, um optimale Darstellung zu finden:
+layout <- layout_with_fr(s_final, niter = 5000, area = vcount(s_final)^10)  
+
+# Funktion zum Vergrößern der Abstände (optional)
+scale_layout <- function(layout, factor = 3) {
+  apply(layout, 2, function(x) (x - min(x)) / (max(x) - min(x)) * factor)
+}
+
+# Vergrößerte Abstände zwischen den Knoten (optional)
+# scaled_layout <- scale_layout(layout, factor = 5) 
+
+# Setze die Knotennamen basierend auf der Spalte "id_begriff"
+V(s_final)$name <- V(s_final)$id_begriff
+
+# Plot
+plot(s_final,
+     asp=0, # Ganzer Raum ausgenutzt
+     layout=layout, # Oder scaled_layout, falls verwendet
+     vertex.size=vertex_size, # Kleinere Knoten
+     vertex.label=V(s_final)$name, # Beschriftung der Knoten 
+     vertex.label.cex=0.5, # Kleinere Labels
+     edge.arrow.size=0.2, # Kleinere Pfeile
+     edge.color="grey50",
+     edge.curved=curve_multiple(s_final))
+
+title("Die 10 meist angefahrensten Häfen zwischen 1795 und 1805")
+
+# Ränder zurücksetzen
+par(mar=c(0,0,0,0))
+```
+In diesem Teilnetzwerk werden die zehn meist angefahrensten Häfen der
+zehn Jahre abgebildet und jene Schiffe, die sie angesteuert haben. Man
+erkennt, dass das Netzerk jetzt deutlich zentrierter ist. Außerdem lässt
+sich besser erkennen, dass die Kanten ausschließlich zu den Häfen
+gerichtet sind und diese somit als Zentrum des Netzwerk fungieren. Auch
+die isolierten Cliquen aus dem Gesamtnetzwerk sind logischerweise nicht
+mehr zu sehen, da es sich zum einen nicht um Häfen gehandelt hatte, die
+häufig angesteuert wurden, noch um Schiffe, die unsere Top 10 Häfen
+angefahren hatten.
+
+```{r Balkendiagramm zu den 20 meist angefahrenen Häfen}
+# Balkendiagramm erstellen 
+
+# Pakete laden
+library(dplyr)
+library(ggplot2)
+library(forcats) # Für bessere Sortierung der Balken
+
+# Bereinigung der Edgeliste und Häufigkeiten berechnen
+edges_cleaned <- el %>%
+  select(from, to, time)
+
+destination_counts <- edges_cleaned %>%
+  count(to, name = "count") %>%
+  arrange(desc(count))
+
+# Anreicherung mit Hafeninformationen
+ports_info <- nodes %>%
+  select(id, id_begriff) %>%
+  rename(to = id, port_name = id_begriff)
+
+destination_with_ports <- destination_counts %>%
+  left_join(ports_info, by = "to")
+
+# Nur die Top 20 Häfen anzeigen
+top_ports <- destination_with_ports %>%
+  slice_max(count, n = 20)
+
+# Balkendiagramm erstellen
+ggplot(top_ports, aes(x = fct_reorder(port_name, count), y = count)) +
+  geom_bar(stat = "identity", fill = ifelse(top_ports$port_name == "St Helena", "orange", "gray")) + # St. Helena in Orange
+  coord_flip() + # Für horizontale Balken
+  labs(
+    title = "Top 20 angesteuerte Häfen (1795-1805)",
+    x = "Häfen",
+    y = "Anzahl der Anfahrten"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.background = element_rect(fill = "darkblue", color = NA), # Dunkelblauer Hintergrund
+    panel.background = element_rect(fill = "darkblue", color = NA), # Panel ebenfalls dunkelblau
+    plot.title = element_text(hjust = 0.5, size = 16, face = "bold", color = "white"), # Weißer Titel
+    axis.text.y = element_text(size = 8, color = "white", margin = margin(r = 10)), # Abstand rechts zu den Labels
+    axis.text.x = element_text(size = 10, color = "white"), # Weiße Achsenticks unten
+    axis.title = element_text(size = 12, color = "white"), # Weiße Achsentitel
+    panel.grid.major = element_line(color = "gray40"), # Dezente Gitterlinien
+    panel.grid.minor = element_blank() # Keine kleinen Gitterlinien
+  )
+```
+
+## 5.4 Egonetzwerk: St. Helena
+
+St. Helena diente als Mikrokosmos der East India Company (Grove, 2015, S.249). Durch die Lage der Insel mitten im Südatlantik, machte es sie zu einem idealen Zwischenstopp für Schiffe, die zwischen Europa und Indien, China und anderen Teilen Asiens unterwegs waren. Hier konnten sie Proviant aufnehmen, Reparaturen durchführen und ihre Reise fortsetzen. St. Helena bot nicht nur eine willkommene Pause von der Seefahrt, sondern spielte auch eine wichtige Rolle im größeren Netzwerk der Kompanie. St. Helena diente auch als strategischer Stützpunkt für die East India Company. Von hier aus konnten sie ihre Handelsinteressen schützen und die Seewege kontrollieren. Die Insel war aber auch ein Ort des Austauschs und der Interaktion. Hier trafen sich Menschen aus verschiedenen Teilen der Welt, darunter Seeleute, Händler, Soldaten und Beamte der East India Company. Ideen, Waren und Geschichten wurden ausgetauscht und trugen zur Verbreitung von Wissen und kulturellen Einflüssen bei (Grove, 2015, S.249). St. Helena war somit ein Schmelztiegel der Kulturen und ein wichtiger Knotenpunkt im globalen Netzwerk der East India Company. 
+
+Die obenstehenden Informationen helfen uns Aussagen über unsere erste Arbeitshypothese zu treffen. Der Hafen St. Helena ist der Knoten mit dem höchsten Degree-Wert in unserem Netzwerk und wurde damit am häufigsten von Schiffen unseres Netzwerks angesteuert. Ob es sich bei der Insel um den Hafen mit dem größten Import- und Exportvolumen handelt, lässt sich jedoch nicht direkt aus dem Netzwerk ablesen. Historisch betrachtet macht es aber wenig Sinn, da die kleine Insel eher als strategischer Zwischenstopp fungierte und nicht als Handelszentrum. 
+
+```{r St. Helena Ego-Netzwerk}
+
+library(dplyr)
+library(igraph)
+library(ggraph)
+
+# Filterung: Verbindungen zu St. Helena
+st_helena_edges <- el %>%
+  filter(from == "sha" | to == "sha")
+
+# Knotenliste erstellen
+nodes_list <- nodes %>%
+  select(id, id_begriff) %>%
+  rename(node_id = id, node_label = id_begriff)
+
+# Netzwerk erstellen: Knoten und Kanten
+# Erstellen von Kanten (Hafen-Verbindungen)
+edges_for_network <- st_helena_edges %>%
+  select(from, to) %>%
+  rename(source = from, target = to)
+
+# Alle Häfen und Schiffe in eine Liste der Knoten integrieren
+unique_nodes <- data.frame(node_id = unique(c(edges_for_network$source, edges_for_network$target))) %>%
+  left_join(nodes_list, by = "node_id")
+
+# Netzwerk erstellen
+network <- graph_from_data_frame(d = edges_for_network, vertices = unique_nodes, directed = FALSE)
+
+# Visualisierung des Egonetzwerks
+
+update.packages("ggimage", ask = FALSE)
+update.packages("ggplot2", ask = FALSE)
+
+# Visualisierung des Netzwerks mit dunkelblauem Hintergrund und Größenanpassung der Punkte
+ggraph(network, layout = "fr") + 
+  geom_edge_link(aes(alpha = 0.5), color = "lightgray", show.legend = FALSE) + # Kanten
+  geom_node_point(aes(size = ifelse(name == "sha", 6, 3), color = ifelse(name == "sha", "white", "orange"))) + # Knoten
+  geom_node_text(aes(label = node_label, color = "white"), repel = TRUE, size = 3) + # Beschriftungen
+  scale_color_identity() + 
+  scale_size_identity() + 
+  theme_void() +  # Entfernen der Standardachsen
+  theme(
+    plot.background = element_rect(fill = "darkblue", color = "lightblue"), # Hintergrund anpassen
+    plot.title = element_text(hjust = 0.5, size = 16, face = "bold", color = "white") # Titel
+  ) +
+  labs(title = "Egonetzwerk: St. Helena")
+```
+
+
+# 6. Diskussion: Fazit, Limitationen und Ausblick
+
+## 6.1 Themenfindung
+
+Als das Projekt begann, hatten wir zunächst viele Ideen, über welche Themen wir eine
+Netzwerkanalyse durchführen könnten. Bis dahin war uns noch nicht ganz klar, auf welche
+Aspekte wir besonders achten mussten, um eine erfolgreiche Analyse zu gestalten. Bei der
+Themensuche dachten wir zunächst an Themen, die uns besonders interessierten. Ein Vorschlag
+war, die NBA zu analysieren. Wir dachten, dass dies aufgrund der enormen Menge an gut
+dokumentierten Statistiken und Daten ein idealer Ansatz für eine Netzwerkanalyse sein könnte. In
+der NBA gibt es eine Vielzahl von Statistiken über Spieler und Teams, angefangen bei geworfenen
+Körben bis hin zu der Anzahl an Blocks, die ein Spieler gemacht hat. Doch während der
+Vorlesungen bei Herrn Sandhu wurde uns allmählich klar, dass eine solche Analyse weit mehr
+erfordert, als wir ursprünglich gedacht hatten. Es wurde deutlich, dass wir tiefer in die Materie
+eintauchen mussten, um eine wirklich fundierte Netzwerkanalyse durchzuführen.
+Nachdem wir die Idee, die NBA zu analysieren, also verworfen hatten, überlegten wir uns,
+stattdessen amerikanische Rapper in Verbindung mit Gangs zu untersuchen. Diese Idee schien
+auf den ersten Blick interessant, doch schnell stellten wir fest, dass die Einsicht in die Akten von
+Rappern und Gangmitgliedern sehr vage war. Vieles bestand lediglich aus Andeutungen und
+Beobachtungen, die zwar gut miteinander in Verbindung standen, jedoch nicht klar belegt werden
+konnten. Mit diesem Wissen setzten wir uns weiter mit verschiedenen Ideen auseinander, die uns
+sowohl auf persönlicher als auch auf fachlicher Ebene interessierten. In einer der Vorlesungen
+stieß Luca Müller auf das Thema der East India Company. Wir hatten alle schon einmal davon
+gehört und konnten uns grob vorstellen, was damit gemeint war, doch die Frage blieb: Wie könnte
+man mit diesem Thema eine Netzwerkanalyse durchführen, und vor allem, worüber sollte man
+analysieren? Wir konnten uns alle für das Thema begeistern und nach einem Gespräch mit Herr
+Sandhu hatten wir das Gefühl das wir darüber eine sehr interessante Netzwerkanalyse machen
+könnten.
+
+## 6.2 Datenermittlung
+
+Zu Beginn der Datenerhebung haben wir uns intensiv mit dem Thema auseinandergesetzt und
+uns in die Materie eingelesen. Während unserer Recherche stießen wir auf Websites wie
+threedecks.org, auf der Schiffsfahrten aus der Zeit der East India Company dokumentiert wurden.
+Diese Daten waren von Geschichtsinteressierten, die die Logbücher aus dieser Ära studiert
+hatten, ins Digitale übertragen worden. Nachdem wir uns mit den verfügbaren Informationen
+vertraut gemacht hatten, setzten wir uns zusammen und überlegten, welche Aspekte unserer
+Forschung wir genauer untersuchen wollten.Wir entschlossen uns dazu, die Häfen, die Schiffe
+und deren Eigentümer zu dokumentieren. Unser Ziel war es, herauszufinden, welche die wichtigsten Akteure und Knotenpunkte der East India Company waren. Da die East India Company über einen Zeitraum von rund 300
+Jahren existierte, war uns schnell klar, dass wir uns auf einen bestimmten Zeitraum beschränken
+mussten. Die Jahre 1795 bis 1805 erschienen uns als der bedeutendste Abschnitt, da dies in der
+Hochzeit der East India Company war und wir in diesem Zeitraum relevante Daten
+fanden um auch Kriege der East India Company zu analysieren.
+
+## 6.3 Aufgabenverteilung und Zusammenarbeit
+
+Als Nächstes stand die Aufgabe an, unsere Arbeit zu strukturieren und die Aufgaben
+untereinander zu verteilen. Wir gründeten eine WhatsApp-Gruppe, um wichtige Fragen schnell
+und direkt klären zu können. Nun ging es daran, die Daten systematisch zu erheben. Wir richteten
+ein Google Sheet ein, in dem wir eine Edge- und eine Nodeliste sowie ein Codebuch anlegten.
+In einem Video-Call besprachen wir, wie diese Listen strukturiert werden sollten, was besonders
+wichtig war, damit alle dieselben Standards anwendeten und unsere Eintragungen einheitlich
+blieben.Für die Edgelist legten wir fest, dass jedes Schiff, das zu einem bestimmten Hafen fuhr,
+als Kante zwischen dem Schiff und dem Hafen aufgeführt werden sollte. In der Nodelist wurden
+sowohl die Schiffe als auch die Häfen erfasst. Bei den Schiffen hielten wir Werte wie den Besitzer
+(Owner), den Heimathafen und den Status des Schiffs fest – etwa ob es zerstört oder verkauft
+wurde. Auch die Häfen wurden in der Node List dokumentiert, zusammen mit den Ländern, in
+denen sie sich befanden. Wir teilten dann alle Schiffe, die in den Jahren 1795 bis 1805 verzeichnet
+waren, auf und ordneten sie entsprechend auf threedecks.org zu. So konnten wir eine detaillierte
+Grundlage für unsere Analyse schaffen und begannen, die Beziehungen und Muster zwischen den
+Häfen und den Schiffen und deren Eigentümern zu untersuchen.
+
+## 6.4 Datenerhebung 
+
+Jeder von uns hatte nun eine gleichmäßige Anzahl an Schiffen, die er in die Edge- und Nodelisten eintragen sollte. Hauptsächlich arbeiteten wir mit der Website ThreeDecks, um unsere Daten zu erheben, doch während dieser Phase brach in Amerika ein Sturm aus, der über das
+Land fegte und zu erheblichen Schäden führte. Infolgedessen waren die Server von ThreeDecks
+beschädigt, und wir hatten für einige Zeit keinen Zugriff auf die Seite. Es war eine unerwartete
+Verzögerung, die uns vor eine Herausforderung stellte. Doch ein paar Wochen später konnten wir
+wieder auf die Seite zugreifen – und zu unserer Überraschung fanden wir plötzlich zu vielen der
+Schiffe Wikipedia-Einträge. Ob es einen direkten Zusammenhang zwischen den Ausfällen der
+Seite und der plötzlichen Verfügbarkeit der Wikipedia-Artikel gab, können wir nicht mit Sicherheit
+sagen, aber es war für uns eine willkommene Hilfe. Diese neuen Informationen stellten eine sehr
+gut dokumentierte Quelle dar, die uns bei der Weiterführung unserer Arbeit unterstützte.
+Gleichzeitig zeigte uns diese Erfahrung jedoch, wie wichtig es ist, sich nicht nur auf eine einzige
+Quelle zu verlassen. Zwar gab es noch andere Quellen, die wir heranzogen, aber diese waren oft
+weniger gut dokumentiert und boten nicht die gleiche Tiefe wie die Wikipedia-Einträge. Die
+Seiten waren zwar sehr gut lesbar und umfassend, doch die Texte waren oft lang,
+sodass es viel Zeit in Anspruch nahm, alle relevanten Informationen zu finden – insbesondere, um
+herauszufinden, an welchen Häfen ein Schiff haltgemacht hatte.
+Die Arbeit wurde noch mühsamer, da viele Schiffe und deren Besitzer sehr ähnliche Namen hatten
+oder die Schiffe denselben Heimathafen teilten. Wenn wir nun zurückblicken, würden wir uns
+wünschen, jeden Tag nur fünf Schiffe in die Listen eingetragen zu haben, anstatt auf einmal
+zwanzig. So hätten wir uns besser konzentrieren können und die Übersichtlichkeit gewahrt. Die
+Arbeit wäre dadurch präziser und weniger fehleranfällig gewesen.Während dieser Zeit trafen wir
+uns regelmäßig in Zoom-Calls, um den Fortschritt zu besprechen. Im Nachhinein sind wir froh,
+diese Meetings so oft abgehalten zu haben, und würden dies auch wieder so handhaben. Es gab
+uns einen guten Überblick darüber, an welchem Punkt jeder von uns gerade war und wo es
+möglicherweise noch Unsicherheiten oder Schwierigkeiten gab. Dies ermöglichte es uns, Fehler
+frühzeitig zu erkennen und direkt mit der Gruppe zu teilen. Indem wir Probleme sofort ansprachen,
+konnten wir verhindern, dass Fehler mehrfach gemacht wurden, und haben dadurch vermutlich
+viel Zeit gespart. Die regelmäßigen Treffen in den Zoom-Calls waren also ein sehr hilfreiches Werkzeug, um die Arbeit zu koordinieren und sicherzustellen, dass wir auf dem
+richtigen Weg waren.
+
+## 6.5 Datenverarbeitung 
+
+Mit dem letzten Schiff, das in das Google Sheet eingetragen wurde, begann die eigentliche
+Verarbeitung der Daten. Der erste Schritt bestand darin, die Fehler im Datensatz zu identifizieren,
+die während der Erhebung und Eingabe entstanden waren. Dies stellte sich als eine große
+Herausforderung heraus, da die Fehler nicht immer sofort erkennbar waren. Oft lagen sie in den
+Details, und nur durch sorgfältige und akribische Arbeit konnten wir nach und nach die
+Ungenauigkeiten aufdecken und korrigieren. Schließlich gelang es uns, den Datensatz so zu
+bereinigen, dass er fehlerfrei und zuverlässig war. Da wir uns auf die Häfen konzentriert hatten,
+war die Anzahl der Knotenpunkte im Vergleich zu anderen Netzwerken relativ gering. Dies
+vereinfachte zwar die Struktur des Systems, da wir es hier nicht mit einem komplexen sozialen
+Netzwerk zu tun hatten, in dem die Knoten viele direkte Verbindungen untereinander aufweisen,
+aber es brachte auch eigene Herausforderungen mit sich. Statt vieler Knoten gab es eine hohe
+Anzahl an Kanten, also den Verbindungen zwischen den Häfen, die alle genau erfasst und
+überprüft werden mussten.
+
+Im Verlauf der Datenverarbeitung wurde uns jedoch bewusst, dass es hilfreich gewesen wäre,
+wenn wir unsere Daten noch detaillierter eingetragen hätten. Insbesondere hätten wir mehr
+Attribute für die Kanten erfassen sollen, da uns dadurch eine tiefere und umfassendere Analyse
+des Datensatzes möglich gewesen wäre. Diese Erkenntnis zeigte uns, dass die Qualität der Daten
+und die Tiefe der erfassten Informationen entscheidend sind, um die Aussagekraft einer
+Netzwerkanalyse zu maximieren.Insgesamt hat uns dieser Prozess gelehrt, wie wichtig es ist, von Anfang an alle möglichen Variablen und Details zu
+berücksichtigen, um die Analyse später auf eine breitere und fundiertere Basis stellen zu können.
+
+## 6.6 Visualisierung der Daten
+
+Nachdem wir den Datensatz erfolgreich fehlerfrei gestaltet hatten, machten wir uns
+an die Visualisierung der Daten. Doch schon beim ersten Versuch stießen wir auf Probleme. Die
+Knoten, also die Schiffe und Häfen, waren viel zu groß, wodurch die Kanten zwischen den Häfen
+und Schiffen – verdeckt wurden. Es war nahezu unmöglich zu erkennen, welches Schiff zu
+welchem Hafen gefahren war. Um dieses Problem zu beheben, erhöhten wir den Abstand
+zwischen den Knoten und verringerten deren Größe, sodass die Kanten wieder sichtbar wurden
+und die Verbindungen klar erkennbar waren. Anschließend haben wir die Knoten weiter angepasst
+und sie je nach Art – Schiffe und Häfen – farblich unterschieden, um die Visualisierung
+übersichtlicher zu gestalten. Doch auch hier traten neue Probleme auf: Das Programm brachte die
+Farben durcheinander, sodass einige Schiffe und Häfen plötzlich die gleiche Farbe erhielten,
+während andere wiederum unterschiedliche Farben hatten. Nachdem wir uns das genauer
+angesehen hatten, stellten wir fest, dass beim Einlesen der Daten Fehler aufgetreten waren –
+darunter auch Schreibfehler. Diese korrigierten wir und nach der Bereinigung waren die
+Visualisierungen endlich gut erkennbar und klar strukturiert. Im Nachhinein hätten wir jedoch noch
+die Eigentümer der Schiffe als eigene Knoten hinzufügen sollen. Das hätte nicht nur das Netzwerk
+noch interessanter gemacht, sondern auch die Visualisierung bereichert. Besonders bei der
+Analyse der Netzwerkmuster hätte dies wichtige Einblicke gegeben. Der Eigentümer eines Schiffs
+spielt eine bedeutende Rolle in den Verbindungen, und durch deren Einbeziehung hätten wir ein
+noch vollständigeres Bild der logistischen und wirtschaftlichen Strukturen der East India Company
+erhalten können. Während der gesamten Visualisierungsphase war die Abstimmung innerhalb des
+Teams besonders wichtig. Da wir alle mit denselben Daten und Zielen arbeiteten, konnten wir
+gemeinsam Fehler entdecken und, wie schon bei der Erstellung des Datensatzes, Korrekturen
+vornehmen, ohne dieselben Fehler mehrfach zu machen. Die Kommunikation war in dieser Phase
+entscheidend: Wir haben regelmäßig miteinander gesprochen, uns gegenseitig bei Problemen
+unterstützt und geholfen, Lösungen zu finden. Diese enge Zusammenarbeit ermöglichte es uns,
+schnell voranzukommen und sicherzustellen, dass wir bei der Visualisierung auf dem richtigen
+Weg waren. Mit den fertigen Visualisierungen war es an der Zeit, die Präsentation zu erstellen.
+Dies haben wir in einem langen Zoom-Call gemeinsam erarbeitet. Das Meeting war besonders
+hilfreich, da jeder im Team genau wusste, wie wir die Ergebnisse präsentieren wollten. Am Ende
+des Calls hatten wir eine klare Vorstellung davon, was jeder von uns den Studenten mitteilen
+wollte. Diese gemeinsame Vorbereitung stellte sicher, dass die Präsentation gut strukturiert und
+jeder Aspekt des Projekts verständlich und prägnant erklärt wurde.
+
+## 6.7 Fazit
+
+Zusammenfassend lässt sich sagen, dass das Projekt eine spannende und lehrreiche Erfahrung
+war, die uns nicht nur in der Netzwerkanalyse weitergebracht hat, sondern uns auch gezeigt hat,
+wie wichtig eine sorgfältige Themenfindung und strukturierte Arbeitsweise sind. Zu Beginn des
+Projekts standen wir vor der Herausforderung, ein geeignetes Thema für unsere Netzwerkanalyse
+zu finden. Die ursprünglichen Ideen, wie etwa die Analyse der NBA oder die Untersuchung von
+Rappern und Gangs, erwiesen sich als wenig praktikabel. Erst die Entscheidung, uns mit der East
+India Company und deren Netzwerken von Schiffsverbindungen zu beschäftigen, führte uns zu
+einem Thema, das sowohl historische Bedeutung als auch die Möglichkeit einer tiefgehenden
+Analyse bot. Die Datenerhebung stellte uns vor viele Herausforderungen, doch durch die
+sorgfältige Recherche und das Auswerten von Quellen wie threedecks.org sowie Wikipedia
+konnten wir eine fundierte Grundlage für unsere Analyse schaffen. Besonders wichtig war hierbei
+die enge Zusammenarbeit im Team, die es uns ermöglichte, Aufgaben zu verteilen und Fehler
+frühzeitig zu erkennen. Die Verarbeitung der Daten war eine akribische und fehleranfällige Arbeit.
+Die Darstellung der Knoten und Kanten musste mehrfach angepasst werden, um sicherzustellen,
+dass alle Verbindungen deutlich erkennbar und verständlich waren. Auch hier zeigte sich, wie
+wichtig eine enge Kommunikation im Team ist, um Fehler schnell zu erkennen und zu beheben.
+Rückblickend haben wir gelernt, wie entscheidend es ist, von Anfang an eine detaillierte und gut
+strukturierte Datenerhebung vorzunehmen. Die regelmäßigen Zoom-Calls und die enge
+Zusammenarbeit ermöglichten es uns, Probleme zu lösen und die Präsentation der Ergebnisse
+optimal vorzubereiten. Am Ende konnten wir ein Ergebnis
+präsentieren, das nicht nur den Umfang der East India Company und ihrer Handelsnetzwerke
+aufzeigt, sondern uns auch wichtige Erkenntnisse über den Umgang mit großen Datensätzen und
+Netzwerkanalysen vermittelt hat.
+
+## 6.8 Ausblick
+
+Im Folgenden wagen wir einen Ausblick auf weitere Forschung in diesem Bereich. In unserer Arbeit haben wir zwar herausgefunden, dass der Hafen St. Helena von der East India Company zwischen 1795 und 1805 am häufigsten angesteuert wurde, jedoch bleibt unklar, ob sich der am meisten angefahrene Hafen im Laufe der 300 jährigen Geschichte des Unternehmens verändert hat. So könnte etwa geklärt werden, ob Faktoren wie Kriege, technologische Entwicklungen oder Naturkatastrophen eine Änderung auf andere Häfen zur Folge hatten. Außerdem wissen wir nach dieser Forschung nicht genau, aus welchen Gründen an der Insel St. Helena am häufigsten gehalten wurde. Um zu klären, wieso die meisten Schiffe der Kompanie von 1795 bis 1805 dort halt machten, müsste man den politischen, militärischen oder wirtschaftlichen Faktoren genauer auf den Grund gehen. Außerdem wissen wir auch nicht, ob sich der meist-angefahrene Hafen saisonal oder je nach Wetterlage verändert hat. Geforscht werden könnte auch daran, ob es eher seltener angefahrene Häfen gibt, die trotzdem von hoher Bedeutung für die Kompanie waren und eine Schlüsselposition einnahmen. Statt sich auf Schiffe und Häfen zu fokussieren könnten zukünftige Forschungen an der East India Company sich genauer mit den Besitzern der Schiffe befassen. So kann untersucht werden, welche Akteure wirtschaftlich am meisten profitierten. Insgesamt beschäftigt sich unsere Forschung mit einem kleinen Moment von zehn Jahren innerhalb der 300 Jahre, in denen die East India Company aktiv war. Sie liefert also keinen Überblick über die gesamte Historie, sondern eine Momentaufnahme von einer Dekade. 
+
+Wir konnten mithilfe unserer Datenanalyse Erkenntnisse über wichtige Knotenpunkte des internationalen Geflechts der East India Company, sowie bedeutender Akteure ziehen. Dennoch bleiben viele Fragen offen, die in zukünftigen Studien untersucht werden sollten.
+
+
+
+
+
+
+*7. Literatur und Anhang* 
+a) 
+
+Chiocchetti, F. (2024). Overseas trade and war: Reconstructing a late eighteenth-century East India Company voyage to Asia between routine and unpredictability. Itinerario, 1–18. https://doi.org/10.1017/S0165115324000081
+
+Clegg, S. (2017). The East India Company: The first modern multinational? Research in the Sociology of Organizations, 49, 43–67. https://doi.org/10.1108/S0733-558X20160000049002
+
+Christof-Füchsle, M. (2018). Quellen zu den Mysore-Kriegen (1766–1799) aus deutschen Archiven. In Archival Reflexicon (pp. 1–11). https://doi.org/10.25360/01-2022-0001
+
+Dalrymple, W. (2019). The Anarchy: The relentless rise of the East India Company. Bloomsbury. ISBN 978-1-40886-437-1.
+
+Damodaran, V., Winterbottom, A., & Lester, A. (Eds.). (2015). The East India Company and the natural world. Palgrave Macmillan. https://doi.org/10.1057/9781137427274
+
+Fuhse, J. A. (2018). Soziale Netzwerke: Konzepte und Forschungsmethoden (2., überarb. Aufl.). UVK Verlag. https://doi.org/10.36198/9783838549811
+
+Jünger, J., & Gärtner, C. (2023). Computational methods für die Sozial- und Geisteswissenschaften. Springer VS. https://doi.org/10.1007/978-3-658-37747-2
+
+Markley, R. (2015). Alexander Hamilton, the Mughal war, and the critique of the East India Company. Genre, 48(2), 237–259. https://doi.org/10.1215/00166928-2884868
+
+Siddiqui, K. (2024). The multinational corporations, capitalism, and imperialism: The case study of East India Company. WFR. Retrieved from https://www.researchgate.net/publication/381225863
+
+Williams, M. R. F. (2022). Experiencing time in the early English East India Company. The Historical Journal, 65, 1175–1196. https://doi.org/10.1017/S0018246X2100087X
+
+
+b) Codebuch (https://github.com/vizzard2000/East-India-Company/blob/main/Codebuch_EIC.csv) 
+
+c) verwendete Datenquellen 
+   Edgelist: https://github.com/vizzard2000/East-India-Company/blob/main/Edgelist_EIC.csv
+   
+   Nodelist: https://github.com/vizzard2000/East-India-Company/blob/main/Nodelist_EIC.csv
+   
+   
+d) komplettes annotiertes RNotebook (Link auf Github) 
+
+e) TeilnehmerInnen
+des Projekts und Arbeitsaufwand im Projekt.
+
+Benian Özdüzenciler (bo027)
+Luca Müller (lm194)
+Laurin Lücking (el048)
+Jonas Paul (jp123)
+Paul Kress (pk107)
+
+Arbeitsaufteilung: Zu Beginn des Forschungsprojekts erfolgte eine gleichmäßige Aufteilung der einzutragenden Knoten und Kanten. Die Erstellung des Netzwerkes, Analyse und Visualisierung wurde von Benian und Luca übernommen. Die Präsentation wurde von Paul und Jonas gestaltet. Die Visualisierungen der Präsentation (mit R und Flourish) wurden von Benian, Luca und Laurin übernommen. Der Forschungsbericht basiert weitesgehend auf der Arbeit von Benian, Luca und Paul. Jonas und Laurin haben auch Texte hinzugefügt. Der Edit-Beitrag wurde von Jonas und Paul übernommen. 
+
+
+
+
+
+
+
+
+
+
+
